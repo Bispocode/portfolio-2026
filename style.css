@@ -37,7 +37,6 @@
     --glassline:rgba(255, 255, 255, 0.11);
 } 
 
-
 body{
     font-family: "Red Hat Display", sans-serif;
     font-optical-sizing: auto;
@@ -563,4 +562,309 @@ nav{
 
 .social-links a:hover img{
     filter: brightness(0) invert(1);
+}
+
+
+
+/* =======================================================
+   TABLET
+======================================================= */
+
+@media (max-width:1024px){
+
+    header{
+        padding:18px 6%;
+    }
+
+    .nav-links{
+        gap:30px;
+    }
+
+    .sidebar{
+        width:12vw;
+    }
+
+    .grid{
+        width:88vw;
+    }
+
+    .aboutme{
+        gap:3rem;
+    }
+
+    .contact{
+        flex-direction:column;
+        justify-content:center;
+        gap:4rem;
+    }
+
+    .contact-text,
+    .contact-form{
+        width:100%;
+    }
+
+}
+
+/* =======================================================
+   MOBILE
+======================================================= */
+
+@media (max-width:768px){
+
+    header{
+
+        padding:18px 6%;
+
+    }
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .nav-links{
+
+        gap:18px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        min-height:80vh;
+
+        padding-top:100px;
+
+    }
+
+    .logo{
+
+        width:90%;
+
+    }
+
+    .faixa{
+
+        font-size:18px;
+
+        height:8vh;
+
+    }
+
+    .linha{
+
+        width:120px;
+
+        height:6px;
+
+        margin-bottom:30px;
+
+    }
+
+    .mural{
+
+        padding:0 8%;
+
+    }
+
+    .mural h2{
+
+        font-size:2rem;
+
+    }
+
+    .cursor-card{
+
+        width:150px;
+
+        height:95px;
+
+    }
+
+    /* ---------- Portfolio ---------- */
+
+    .portfolio{
+
+        height:auto;
+
+    }
+
+    .portfolio-container{
+
+        position:relative;
+
+        height:auto;
+
+        overflow:visible;
+
+    }
+
+    .portfolio-track{
+
+        flex-direction:column;
+
+        transform:none !important;
+
+    }
+
+    .project{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        height:80px;
+
+    }
+
+    .sidebar h2{
+
+        writing-mode:horizontal-tb;
+
+        transform:none;
+
+        font-size:1.4rem;
+
+    }
+
+    .grid{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding:25px;
+
+    }
+
+    .card{
+
+        height:260px;
+
+        margin:15px 0;
+
+    }
+
+    /* ---------- About ---------- */
+
+    .aboutme{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:3rem;
+
+        padding:15% 8%;
+
+    }
+
+    .texto-aboutme{
+
+        width:100%;
+
+    }
+
+    .objeto-aboutme{
+
+        width:100%;
+
+        height:420px;
+
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact{
+
+        padding:15% 8%;
+
+    }
+
+    .contact-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .contact-buttons button,
+
+    .contact-buttons a{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .social-links{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+/* =======================================================
+   MOBILE PEQUENO
+======================================================= */
+
+@media (max-width:480px){
+
+    .logo{
+
+        width:95%;
+
+    }
+
+    .mural h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .texto-aboutme span,
+
+    .contact-text span{
+
+        font-size:2rem;
+
+    }
+
+    .texto-aboutme h2,
+
+    .contact-text h2{
+
+        font-size:1.1rem;
+
+    }
+
+    .card{
+
+        height:210px;
+
+    }
+
+    .objeto-aboutme{
+
+        height:320px;
+
+    }
+
 }
