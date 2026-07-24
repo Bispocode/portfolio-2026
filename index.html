@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bispo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="music" loop>
+        <source src="assets/music.mp3">
+    </audio>
+
+    <header>
+        <nav>
+            <nav>
+            <a href="#hero" class="logo-nav">
+                <img src="assets/Favicon.png" alt="Logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="config-btn">
+                ⚙
+            </button>
+            <div class="settings-menu">
+                <button id="darkMode">
+                    🌙 Dark Mode
+                </button>
+                <button id="musicToggle">
+                    🎵 Music
+                </button>
+            </div>
+        </nav>
+    </header>
+    <section id="hero" class="hero">
+        <img src="assets/logo.svg" alt="Logo Bispo" class="logo">
+    </section>
+    <div class="faixa">
+        <div class="faixa-conteudo">
+            <span>Graphic Design • Photography • Video Editing • Web Design • 3D Modeling •</span>
+            <span>Graphic Design • Photography • Video Editing • Web Design • 3D Modeling •</span>
+            <span>Graphic Design • Photography • Video Editing • Web Design • 3D Modeling •</span>
+            <span>Graphic Design • Photography • Video Editing • Web Design • 3D Modeling •</span>
+        </div>
+    </div>
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-track">
+            
+                <section class="mural">
+                    <div class="texto-mural">
+                        <div class="linha"></div>
+                        <h2>
+                            Each project is an opportunity
+                            <br>to <span>learn, create, and evolve.</span>
+                        </h2>
+                    </div>
+                    <div class="cursor-gallery" aria-hidden="true">
+                    <!-- Os cards serão inseridos aqui pelo JavaScript.-->
+                    </div>
+                </section>
+                <!-- Projeto 1 -->
+                <article class="project">
+                    <div class="sidebar">
+                        <h2>WEB DESIGN</h2>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card card-1"></div>
+                        <div class="card card-2"></div>
+                        <div class="card card-3"></div>
+                        <div class="card card-4"></div>
+                        <div class="card card-5"></div>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article class="project">
+                    <div class="sidebar">
+                        <h2>MOTION DESIGN</h2>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card card-1"></div>
+                        <div class="card card-2"></div>
+                        <div class="card card-3"></div>
+                        <div class="card card-4"></div>
+                        <div class="card card-5"></div>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 -->
+                <article class="project">
+                    <div class="sidebar">
+                        <h2>PHOTOGRAPHY</h2>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card card-1"></div>
+                        <div class="card card-2"></div>
+                        <div class="card card-3"></div>
+                        <div class="card card-4"></div>
+                        <div class="card card-5"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id= about class="aboutme">
+        <div class="texto-aboutme">
+            <div class="linha"></div>
+            <span>About me</span>
+            <h2>
+                Hi, I'm Luís Bispo, a multidisciplinary designer passionate
+                about turning ideas into meaningful digital experiences...
+            </h2>
+        </div>
+        <div class="objeto-aboutme">
+        </div>
+    </section>
+    <section class="contact" id="contact">
+
+    <div class="contact-text">
+
+        <div class="linha"></div>
+
+        <span>Contact</span>
+
+        <h2>
+            Have an idea, a project, or just want to say hello?
+            I'd love to hear from you.
+        </h2>
+
+    </div>
+
+    <form
+        class="contact-form"
+        action="https://formsubmit.co/lbispodeandrade@gmail.com"
+        method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required>
+
+        <textarea
+            name="message"
+            rows="6"
+            placeholder="Tell me about your project..."
+            required></textarea>
+
+        <div class="contact-buttons">
+
+            <button type="submit">
+
+                Send Message
+
+            </button>
+    
+        </div>
+        <div class="social-links">
+            
+            <a href="https://wa.me/5511957106198" target="_blank" aria-label="whatsapp">
+                <img src="/assets/whatsapp.svg" alt="whatsapp">
+            </a>
+
+            <a href="" target="_blank" aria-label="instagram">
+                <img src="/assets/instagram.svg" alt="instagram">
+            </a>
+            
+            <a href="" target="_blank" aria-label="youtube">
+                <img src="/assets/youtube.svg" alt="youtube">
+            </a>
+            
+            <a href="" target="_blank" aria-label="linkedin">
+                <img src="/assets/linkedin.svg" alt="linkedin">
+            </a>
+
+            <a href="" target="_blank" aria-label="behance">
+                <img src="/assets/behance.svg" alt="behance">
+            </a>
+
+        </div>
+    </form>
+
+</section>
+    <script src="mural.js"></script>
+    <script src="nav.js"></script>
+    <script src="Portfolio_scroll.js"></script>
+    <script type="module" src="aboutme.js"></script>
+</body>
+</html>
+
