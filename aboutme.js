@@ -282,6 +282,7 @@ function ajustarModelo(){
     }
 
 }
+DeviceOrientationEvent.requestPermission()
 
 modelo = gltf.scene;
 
