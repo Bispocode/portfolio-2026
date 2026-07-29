@@ -41,3 +41,21 @@ window.addEventListener("resize", atualizarPortfolio);
 
 // Move durante o scroll
 window.addEventListener("scroll", moverPortfolio);
+
+function atualizarPortfolio(){
+
+    if(window.matchMedia("(max-width:768px), (orientation:portrait)").matches){
+
+        portfolio.style.height = "auto";
+        track.style.transform = "none";
+
+        return;
+
+    }
+
+    const distanciaMaxima = track.scrollWidth - window.innerWidth;
+
+    portfolio.style.height =
+        `${distanciaMaxima + window.innerHeight}px`;
+
+}
