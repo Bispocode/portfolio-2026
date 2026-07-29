@@ -37,3 +37,17 @@ darkBtn.onclick = () => {
     }
 
 }
+
+const logo = document.querySelector(".logo-nav");
+
+const menu = document.querySelector(".nav-content");
+
+logo.addEventListener("click",(e)=>{
+
+    if(window.innerWidth > 768) return;
+
+    e.preventDefault();
+
+    menu.classList.toggle("open");
+
+});
