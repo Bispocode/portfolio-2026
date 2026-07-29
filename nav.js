@@ -100,3 +100,62 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 
 });
+const configBtn = document.querySelector(".config-btn");
+const settingsMenu = document.querySelector(".settings-menu");
+
+configBtn.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    settingsMenu.classList.toggle("open");
+
+});
+
+document.addEventListener("click", (event) => {
+
+    if (!settingsMenu.contains(event.target) &&
+        !configBtn.contains(event.target)) {
+
+        settingsMenu.classList.remove("open");
+
+    }
+
+});
+
+// =====================================
+// DARK MODE
+// =====================================
+
+const darkBtn = document.querySelector("#darkMode");
+
+if (darkBtn) {
+
+    darkBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        // Salva a preferência
+        localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark")
+                ? "dark"
+                : "light"
+        );
+
+    });
+
+}
+
+
+// =====================================
+// CARREGA O TEMA SALVO
+// =====================================
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
