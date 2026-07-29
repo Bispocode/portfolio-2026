@@ -1,53 +1,102 @@
-
-const darkBtn = document.querySelector("#darkMode");
-darkBtn.onclick = ()=>{
-    document.body.classList.toggle("dark");
-}
-
-const music = document.querySelector("#music");
-const musicBtn = document.querySelector("#musicToggle");
-musicBtn.onclick = ()=>{
-    if(music.paused){
-        music.play();
-    }else{
-        music.pause();
-    }
-}
-
-const configBtn = document.querySelector(".config-btn");
-const menu = document.querySelector(".settings-menu");
-configBtn.addEventListener("click", ()=>{
-    menu.classList.toggle("open");
-});
-
-const logo = document.querySelector(".logo");
-
-darkBtn.onclick = () => {
-
-    document.body.classList.toggle("dark");
-
-    if(document.body.classList.contains("dark")){
-
-        logo.src = "assets/logo dark.svg";
-
-    }else{
-
-        logo.src = "assets/logo.svg";
-
-    }
-
-}
+// =====================================
+// ELEMENTOS
+// =====================================
 
 const logo = document.querySelector(".logo-nav");
+const navContent = document.querySelector(".nav-content");
 
-const menu = document.querySelector(".nav-content");
 
-logo.addEventListener("click",(e)=>{
+// =====================================
+// ABRIR / FECHAR MENU MOBILE
+// =====================================
 
-    if(window.innerWidth > 768) return;
+logo.addEventListener("click", (event) => {
 
-    e.preventDefault();
+    if (window.innerWidth <= 768) {
 
-    menu.classList.toggle("open");
+        event.preventDefault();
+
+        navContent.classList.toggle("open");
+
+    }
+
+});
+
+
+// =====================================
+// FECHA O MENU AO CLICAR EM UM LINK
+// =====================================
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (window.innerWidth <= 768) {
+
+            navContent.classList.remove("open");
+
+        }
+
+    });
+
+});
+
+
+// =====================================
+// FECHA O MENU AO CLICAR FORA DELE
+// =====================================
+
+document.addEventListener("click", (event) => {
+
+    if (window.innerWidth > 768) return;
+
+    const clicouNoMenu = navContent.contains(event.target);
+    const clicouNaLogo = logo.contains(event.target);
+
+    if (!clicouNoMenu && !clicouNaLogo) {
+
+        navContent.classList.remove("open");
+
+    }
+
+});
+
+
+// =====================================
+// AO VOLTAR PARA DESKTOP
+// =====================================
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 768) {
+
+        navContent.classList.remove("open");
+
+    }
+
+});
+
+
+// =====================================
+// SCROLL SUAVE PARA AS SEÇÕES
+// =====================================
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        const destino = document.querySelector(this.getAttribute("href"));
+
+        if (!destino) return;
+
+        event.preventDefault();
+
+        destino.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
 
 });
