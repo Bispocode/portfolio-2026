@@ -698,7 +698,7 @@ nav{
     }
 
     .social-links{
-
+        width: 100vw;
         justify-content:center;
 
         flex-wrap:wrap;

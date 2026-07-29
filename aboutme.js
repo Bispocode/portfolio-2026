@@ -225,3 +225,27 @@ function animate() {
 }
 
 animate();
+
+const mobile = window.innerWidth <= 768;
+
+if(mobile){
+
+    modelo.position.set(0,-1,0);
+    modelo.scale.set(1.8,1.8,1.8);
+
+}else{
+
+    modelo.position.set(-1,-1,0);
+    modelo.scale.set(2.25,2.25,2.25);
+
+}
+
+window.addEventListener("deviceorientation",(event)=>{
+
+    const x = event.beta;
+    const y = event.gamma;
+
+});
+
+modelo.rotation.x = THREE.MathUtils.degToRad(x*0.15);
+modelo.rotation.y = THREE.MathUtils.degToRad(y*0.15);
