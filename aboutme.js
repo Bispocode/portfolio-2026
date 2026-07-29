@@ -147,9 +147,19 @@ loader.load(
 
         });
 
-        modelo.scale.set(2.25, 2.25, 2.25);
+       const mobile = window.innerWidth <= 768;
 
-        modelo.position.set(1,-1, 0);
+if (mobile) {
+
+    modelo.position.set(0, -1, 0);
+    modelo.scale.set(1.8, 1.8, 1.8);
+
+} else {
+
+    modelo.position.set(1, -1, 0);
+    modelo.scale.set(2.25, 2.25, 2.25);
+
+}
 
         scene.add(modelo);
 
@@ -165,6 +175,7 @@ loader.load(
 
     }
 
+    
 );
 
 
@@ -178,10 +189,13 @@ let mouseY = 0;
 let targetRotX = 0;
 let targetRotY = 0;
 
-window.addEventListener("mousemove", (event) => {
+let gyroX = 0;
+let gyroY = 0;
 
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+window.addEventListener("deviceorientation", (event) => {
+
+    gyroX = event.beta;
+    gyroY = event.gamma;
 
 });
 
@@ -196,16 +210,29 @@ function animate() {
 
     if (modelo) {
 
-        const normalizadoX =
-            ((mouseX / window.innerWidth) - 0.5) * 2;
+        const mobile = window.innerWidth <= 768;
 
-        const normalizadoY =
-            ((mouseY / window.innerHeight) - 0.5) * 2;
+        if (mobile) {
 
-        targetRotY = normalizadoX * 0.35;
-        targetRotX = normalizadoY * 0.35;
+            // Gira pelo giroscópio
+            targetRotY = THREE.MathUtils.degToRad(gyroY) * 0.4;
+            targetRotX = THREE.MathUtils.degToRad(gyroX - 45) * 0.2;
 
-        // Rotação suave
+        } else {
+
+            // Gira pelo mouse
+            const normalizadoX =
+                ((mouseX / window.innerWidth) - 0.5) * 2;
+
+            const normalizadoY =
+                ((mouseY / window.innerHeight) - 0.5) * 2;
+
+            targetRotY = normalizadoX * 0.35;
+            targetRotX = normalizadoY * 0.35;
+
+        }
+
+        // Suavização da rotação
         modelo.rotation.y = THREE.MathUtils.lerp(
             modelo.rotation.y,
             targetRotY,
@@ -226,19 +253,7 @@ function animate() {
 
 animate();
 
-const mobile = window.innerWidth <= 768;
 
-if(mobile){
-
-    modelo.position.set(0,-1,0);
-    modelo.scale.set(1.8,1.8,1.8);
-
-}else{
-
-    modelo.position.set(-1,-1,0);
-    modelo.scale.set(2.25,2.25,2.25);
-
-}
 
 window.addEventListener("deviceorientation",(event)=>{
 
@@ -249,3 +264,33 @@ window.addEventListener("deviceorientation",(event)=>{
 
 modelo.rotation.x = THREE.MathUtils.degToRad(x*0.15);
 modelo.rotation.y = THREE.MathUtils.degToRad(y*0.15);
+
+function ajustarModelo(){
+
+    if(!modelo) return;
+
+    if(window.innerWidth <= 768){
+
+        modelo.position.set(0,-1,0);
+        modelo.scale.set(1.8,1.8,1.8);
+
+    }else{
+
+        modelo.position.set(1,-1,0);
+        modelo.scale.set(2.25,2.25,2.25);
+
+    }
+
+}
+
+modelo = gltf.scene;
+
+ajustarModelo();
+
+scene.add(modelo);
+
+modelo = gltf.scene;
+
+ajustarModelo();
+
+scene.add(modelo);

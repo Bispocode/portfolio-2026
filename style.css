@@ -668,8 +668,7 @@ nav{
     .objeto-aboutme{
 
         width:100%;
-
-        height:420px;
+        height:320px;
 
     }
 
@@ -698,13 +697,15 @@ nav{
     }
 
     .social-links{
-        width: 100vw;
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-    }
-
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:nowrap;
+}
+.social-links a{
+    width:46px;
+    height:46px;
+}
 }
 
 /* =======================================================

@@ -91,3 +91,9 @@ mural.addEventListener("mousemove", (event) => {
 
     
 });
+
+if(window.innerWidth < 768){
+
+    // não cria cards
+
+}
